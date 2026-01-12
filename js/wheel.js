@@ -69,7 +69,12 @@ async function loadStudentsForClass(classId) {
     setWheelStatus(`Đang tải danh sách ${classId} từ Google Sheets...`);
     const resp = await fetch(url, { cache: "no-store" });
     if (!resp.ok) {
-      throw new Error("HTTP " + resp.status);
+      let errorMsg = "HTTP " + resp.status;
+      try {
+        const errorData = await resp.json();
+        if (errorData.error) errorMsg += ": " + errorData.error;
+      } catch (e) { }
+      throw new Error(errorMsg);
     }
     const text = await resp.text();
     const rows = parseCsv(text);
