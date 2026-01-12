@@ -4,10 +4,8 @@
 // Danh sách sheet Google Sheets dùng cho "TRỢ THỦ TRI BÀI"
 // Key: mã lớp, Value: URL CSV đã Publish to web
 const WHEEL_SHEETS_CONFIG = {
-  "11B1":
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBGeRBBa8NlNAya3UcL7T0qI0jI2HVN20ibhrrpBX2w_58qRidrm2jlXmMws05Bqu6Gd1uRIdv_4Q_/pub?gid=0&single=true&output=csv",
-  "12C1":
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBGeRBBa8NlNAya3UcL7T0qI0jI2HVN20ibhrrpBX2w_58qRidrm2jlXmMws05Bqu6Gd1uRIdv_4Q_/pub?gid=1446670802&single=true&output=csv"
+  "11B1": "/api/students?classId=11B1",
+  "12C1": "/api/students?classId=12C1"
 };
 
 // Các mốc đếm ngược chính trong năm
@@ -21,7 +19,7 @@ const EXAM_PHASES_CONFIG = [
 const HSG_EXAM_TIME_CONFIG = "2026-03-12T00:00:00";
 
 // URL Google Sheets cho Thời Khóa Biểu (CSV format)
-const TIMETABLE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSg6G7zmzBAa2Qodj30H5DGd9jEqO9q07Z20tMPmUJz61eKvMAadqf9NjVq6jjOHw/pub?gid=484115559&single=true&output=csv";
+const TIMETABLE_SHEET_URL = "/api/timetable";
 
 // Link để chỉnh sửa/cập nhật Thời Khóa Biểu trên Google Sheets
 const TIMETABLE_EDIT_URL = "https://docs.google.com/spreadsheets/d/1LF78-08bL93xfCu9hdps4OXm2BiJhzXs/edit?usp=sharing&ouid=108769202968830582103&rtpof=true&sd=true";
@@ -34,10 +32,10 @@ const TIMETABLE_EDIT_URL = "https://docs.google.com/spreadsheets/d/1LF78-08bL93x
 // và publish mỗi sheet ra CSV với gid khác nhau.
 // Ví dụ bên dưới dùng cùng 1 URL, hãy thay bằng URL CSV thật của từng sheet.
 const TEACHING_PLAN_SHEETS = {
-  // Lớp 11 (gid=0) - link pubhtml như bạn cung cấp, code sẽ tự chuyển output=csv
-  lop11: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8nwCjK3JbM_h6XH-2CLtIMrZ-t6BDxuAvvuz3dOPmk33M5kC3tMX0A0p__m_s8O5fCaQkHKvmR4vf/pubhtml?gid=0&single=true",
-  // Lớp 12 (gid=1646673641)
-  lop12: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8nwCjK3JbM_h6XH-2CLtIMrZ-t6BDxuAvvuz3dOPmk33M5kC3tMX0A0p__m_s8O5fCaQkHKvmR4vf/pubhtml?gid=1646673641&single=true"
+  // Lớp 11
+  lop11: "/api/teaching-plan?grade=lop11",
+  // Lớp 12
+  lop12: "/api/teaching-plan?grade=lop12"
 };
 
 // Khung tuần năm học
