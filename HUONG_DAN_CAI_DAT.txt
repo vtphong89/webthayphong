@@ -1,0 +1,37 @@
+========================================
+   HUONG DAN CAI DAT VA BUILD
+========================================
+
+BUOC 1: CAI DAT NODE.JS
+------------------------
+1. Truy cap: https://nodejs.org/
+2. Tai ve phien ban LTS (khuyen dung)
+3. Cai dat Node.js (giu nguyen cac tuy chon mac dinh)
+4. Khoi dong lai may tinh neu can
+
+BUOC 2: CHAY BUILD
+-------------------
+Co 2 cach:
+
+CACH 1: Su dung file .bat (De nhat)
+   - Double-click vao file: build.bat
+   - Script se tu dong kiem tra va cai dat dependencies
+   - Sau do se obfuscate tat ca file JavaScript
+
+CACH 2: Su dung Command Line
+   - Mo PowerShell hoac Command Prompt
+   - Chay lenh: npm install
+   - Sau do chay: npm run build
+
+KET QUA
+-------
+Sau khi build thanh cong, tat ca file JavaScript da duoc obfuscate
+se nam trong thu muc: dist/
+
+Ban co the deploy toan bo thu muc dist/ len server.
+
+========================================
+Luu y: File goc van duoc giu nguyen de ban co the chinh sua.
+Neu can chinh sua, hay sua file goc roi chay lai build.
+========================================
+
