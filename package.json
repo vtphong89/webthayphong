@@ -4,7 +4,8 @@
   "description": "Web cá nhân với JavaScript obfuscated",
   "scripts": {
     "build": "node build.js",
-    "obfuscate": "node build.js"
+    "obfuscate": "node build.js",
+    "check": "node check-vercel.js"
   },
   "devDependencies": {
     "javascript-obfuscator": "^4.1.0",

@@ -20,10 +20,21 @@ const ALLOWED_FILES = {
 };
 
 module.exports = async (req, res) => {
+  // Xử lý CORS preflight
+  if (req.method === 'OPTIONS') {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    return res.status(200).end();
+  }
+
   // Chỉ cho phép GET request
   if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
+
+  // Set CORS headers
+  res.setHeader('Access-Control-Allow-Origin', '*');
 
   // Lấy tên file từ query parameter
   const fileName = req.query.file;
